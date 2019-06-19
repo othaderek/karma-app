@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2019_06_18_210252) do
     t.string "location"
     t.string "bio"
     t.string "pic"
-    t.integer "points"
+    t.integer "points", default: 0
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

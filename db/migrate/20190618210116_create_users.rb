@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :location
       t.string :bio
       t.string :pic
-      t.integer :points
+      t.integer :points, default: 0
       t.string :password_digest
 
       t.timestamps

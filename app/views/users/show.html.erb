@@ -1,0 +1,59 @@
+<h1> Show page for <%= @user.username %> </h1>
+
+<% if @current_user == @user %>
+  <%= "Welcome #{@current_user.username}" %>
+<% elsif @current_user.followees.include?(@user) %>
+  <p>Following: <%= @user.username %></p>
+<% else %>
+  <%= button_to "Follow", follow_user_path, method: "POST"  %>
+<% end %>
+
+<%= @user.pic %>
+<h2>Location: <br><%= @user.location %></h2>
+<h3>Bio: <br><%= @user.bio %></h3>
+
+
+<ul>
+  <h3>Followers:</h3>
+<% @user.followers.each do |follower| %>
+  <ul>
+    <li>
+      <%= link_to follower.username, user_path(follower.id) %>
+    </li>
+  </ul>
+<% end %>
+</ul>
+
+<ul>
+  <h3>Following:</h3>
+<% @user.followees.each do |followee| %>
+  <ul>
+    <li>
+      <%= link_to followee.username, user_path(followee.id) %>
+    </li>
+  </ul>
+<% end %>
+</ul>
+
+<ul>
+  <h3>Gifts:</h3>
+
+  <%= form_for @gift, url: create_gift_path do |f| %>
+    <%= f.label :deed_id %>
+    <%= f.hidden_field :receiver_id, value: @user.id %>
+    <%= f.hidden_field :giver_id, value: @current_user.id %>
+    <%= f.collection_select :deed_id, @deeds, :id, :item %>
+    <%= f.submit %>
+  <% end %>
+
+<% @user.received_gifts.each do |gift| %>
+  <ul>
+    <li>
+      <%= gift.giver.username %> gifted <%= gift.deed.item %>
+    </li>
+  </ul>
+<% end %>
+</ul>
+
+<%= link_to "Search Users", users_path %>
+<!-- carla.received_gifts.map {|gift| "#{gift.giver.username}, #{gift.deed.item}"} -->

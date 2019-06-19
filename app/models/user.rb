@@ -17,9 +17,7 @@ class User < ApplicationRecord
   has_many :received_deeds, through: :received_gifts, source: :deed
   has_many :given_deeds, through: :given_gifts, source: :deed
 
-  # def give_gift_to(receiver_id, deed_id)
-  #   byebug
-  #   Gift.create(giver_id: self.id, receiver_id: receiver_id, deed_id: deed_id)
-  # end
-
+  def give_gift_to(receiver_id, deed_id)
+    Gift.create(giver_id: self.id, receiver_id: receiver_id, deed_id: deed_id)
+  end
 end
