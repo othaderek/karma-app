@@ -53,6 +53,10 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def destroy
+    
+  end
+
   private
 
   def find_user

@@ -2,7 +2,9 @@
 <ul>
 <% @deeds.each do |deed| %>
 <li>
-  <%= deed.item %>
+  <%= deed.item%>
 </li>
 <% end %>
 </ul>
+
+<%= link_to "Create a new Deed", new_deed_path %>

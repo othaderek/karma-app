@@ -37,13 +37,16 @@
 
 <ul>
   <h3>Gifts:</h3>
-
+  <% if @current_user == @user %>
+    <p> You can't send yourself gifts, silly!! </p>
+  <% else %>
   <%= form_for @gift, url: create_gift_path do |f| %>
     <%= f.label :deed_id %>
     <%= f.hidden_field :receiver_id, value: @user.id %>
     <%= f.hidden_field :giver_id, value: @current_user.id %>
     <%= f.collection_select :deed_id, @deeds, :id, :item %>
     <%= f.submit %>
+  <% end %>
   <% end %>
 
 <% @user.received_gifts.each do |gift| %>
