@@ -24,14 +24,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-
     if @user.valid?
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
       redirect_to new_user_path
     end
-
   end
 
   def follow
@@ -40,21 +38,26 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
-  # def new_gift
-  #   @gift = Gift.new
-  #   @deeds = Deed.all
-  #   find_user
-  # end
-
   def create_gift
     find_user
-    # byebug
     Gift.create(gift_params)
     redirect_to user_path(@user)
   end
 
+  def edit
+    find_user
+  end
+
+  def update
+    find_user
+    @user.update(user_params)
+    redirect_to @user
+  end
+
   def destroy
-    
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to new_login_path
   end
 
   private
