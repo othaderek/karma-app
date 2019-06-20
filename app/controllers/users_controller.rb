@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def show
     @gift = Gift.new
-    @deeds = Deed.all
+    @gift_items = GiftItem.all
     find_user
   end
 
@@ -57,7 +57,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to new_login_path
+    logout
   end
 
   private
@@ -71,7 +71,7 @@ class UsersController < ApplicationController
   end
 
   def gift_params
-    params.require(:gift).permit(:deed_id, :receiver_id, :giver_id)
+    params.require(:gift).permit(:gift_item_id, :receiver_id, :giver_id)
   end
 
 end

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root "users#index"
 
-  resources :deeds
+  resources :gift_items
   resources :gifts
   resources :follows
   resources :users

@@ -1,0 +1,10 @@
+
+<ul>
+<% @gift_items.each do |gift_item| %>
+<li>
+  <%= gift_item.item%>
+</li>
+<% end %>
+</ul>
+
+<%= link_to "Create A New Gift Item", new_gift_item_path %>

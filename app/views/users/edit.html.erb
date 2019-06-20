@@ -1,15 +1,20 @@
 <h1>Update User Info </h1>
+<div class="user-update">
+  <div>
 <% if @current_user == @user %>
   <%= form_for @user do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-    <%= f.label :location %>
-    <%= f.text_field :location %>
-    <%= f.label :bio %>
-    <%= f.text_area :bio %>
-    <%= f.submit %>
+    <div><%= f.label :username %></div>
+    <div><%= f.text_field :username %></div>
+    <div><%= f.label :location %></div>
+    <div><%= f.text_field :location %></div>
+    <div><%= f.label :bio %></div>
+    <div><%= f.text_area :bio %></div>
+    <div><%= f.submit %></div>
   <% end %>
-  <%= link_to "Delete User FOREVER!", '/login', method: :delete %>
+  <br>
+  <%= link_to "Delete User FOREVER!", user_path(@user), method: :delete %>
 <% else %>
   <p>You can't update other user profiles, silly!</p>
 <% end %>
+  </div>
+</div>

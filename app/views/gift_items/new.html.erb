@@ -1,4 +1,4 @@
-<h1> Create A New Deed </h1>
+<h1> Create A New Gift Item </h1>
 
 <% if flash[:errors] %>
   <ul>
@@ -10,8 +10,10 @@
   </ul>
 <% end %>
 
-<%= form_for @deed do |f| %>
+<%= form_for @gift_item do |f| %>
   <%= f.label :item %>
   <%= f.text_field :item %>
   <%= f.submit %>
 <% end %>
+<br>
+<%= link_to "Find A User!(to send your gift to)", users_path %>
