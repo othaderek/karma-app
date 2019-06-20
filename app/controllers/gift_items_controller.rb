@@ -14,7 +14,7 @@ class GiftItemsController < ApplicationController
       redirect_to gift_items_path
     else
       flash[:errors] = @gift_item.errors.full_messages
-      render new_gift_items_path
+      render new_gift_item_path
     end
   end
 
