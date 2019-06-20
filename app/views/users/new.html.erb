@@ -1,19 +1,19 @@
 
 <h1>Registration</h1>
-
+<div class="registration">
 <%= form_for @user do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
-  <%= f.label :bio %>
-  <%= f.text_area :bio %>
+  <div><%= f.label :username %></div>
+  <div><%= f.text_field :username %></div>
+  <div><%= f.label :location %></div>
+  <div><%= f.text_field :location %></div>
+  <div><%= f.label :bio %></div>
+  <div><%= f.text_area :bio %></div>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
+  <div><%= f.label :password %></div>
+  <div><%= f.password_field :password %></div>
+  <div><%= f.label :password_confirmation %></div>
+  <div><%= f.password_field :password_confirmation %></div>
 
-  <%=  %>
   <%= f.submit %>
 <% end %>
+</div>

@@ -15,12 +15,6 @@ ActiveRecord::Schema.define(version: 2019_06_18_210252) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "deeds", force: :cascade do |t|
-    t.string "item"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "follows", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followee_id"
@@ -28,10 +22,16 @@ ActiveRecord::Schema.define(version: 2019_06_18_210252) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "gift_items", force: :cascade do |t|
+    t.string "item"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "gifts", force: :cascade do |t|
     t.integer "giver_id"
     t.integer "receiver_id"
-    t.integer "deed_id"
+    t.integer "gift_item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

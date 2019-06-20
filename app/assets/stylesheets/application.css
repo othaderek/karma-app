@@ -13,3 +13,100 @@
  *= require_tree .
  *= require_self
  */
+
+img {
+  max-width: 250px;
+}
+
+.welcome {
+  display: block;
+  text-align: center;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 0px;
+  border: 1px solid black;
+  margin: 5%;
+  border-radius: 25px;
+  background-color: #fefff2;
+  box-shadow: 5px 5px #666565;
+}
+
+.home-page {
+  background-color: #dddddd;
+  border: 2px solid #dddddd;
+  border-radius: 25px;
+  margin: 5%;
+  box-shadow: 5px 5px #666565;
+}
+
+header, footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: #fefff2;
+  margin: 5%;
+  border: 1px solid black;
+  border-radius: 25px;
+  box-shadow: 5px 5px #666565;
+}
+
+.login {
+  display: flex;
+  justify-content: space-around;
+}
+
+h1, h3, h5{
+  text-align: center;
+}
+
+.user-info {
+  text-align: center;
+}
+
+body {
+  background-color: #262626;
+}
+
+.user-index {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  
+}
+
+.user-update {
+  display: flex;
+  justify-content: space-around;
+}
+
+.gift-item {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  text-align: center;
+}
+
+.section {
+  /* display: flex;
+  justify-content: space-around;
+  flex-direction: column; */
+  margin: auto;
+  width: 40%;
+  border: 1px solid black;
+  
+  padding: 10px;
+  background: #fefff2;
+  box-shadow: 5px 5px #666565;
+}
+
+.section-2 {
+  text-align: center;
+  
+}
+
+.registration {
+  text-align: center;
+  box-shadow: 5px 5px #666565;
+}
