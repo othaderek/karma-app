@@ -7,3 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # User.create(username: "Carla", location: "Brooklyn", bio: "Livin' that coding lyfe.", pic: "http://www.carlastickler.com/uploads/8/0/0/0/80006612/leatherfullsize-1-of-1_2_orig.jpg", points: 0)
+
