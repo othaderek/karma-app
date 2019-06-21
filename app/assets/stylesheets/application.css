@@ -40,6 +40,7 @@ img {
   border-radius: 25px;
   margin: 5%;
   box-shadow: 5px 5px #666565;
+  font-family: 'Montserrat', sans-serif;
 }
 
 header, footer {
@@ -47,6 +48,7 @@ header, footer {
   justify-content: space-around;
   background-color: #fefff2;
   margin: 5%;
+  padding: 1%;
   border: 1px solid black;
   border-radius: 25px;
   box-shadow: 5px 5px #666565;
@@ -101,6 +103,10 @@ body {
   box-shadow: 5px 5px #666565;
 }
 
+.section, li {
+  color:  #666565;
+}
+
 .section-2 {
   text-align: center;
   
@@ -108,5 +114,29 @@ body {
 
 .registration {
   text-align: center;
-  box-shadow: 5px 5px #666565;
+}
+
+.validation {
+  color: red;
+}
+
+li {
+  list-style-type: none;
+}
+
+.errors, ul {
+  color: red;
+  padding: 0;
+}
+
+#gift-list {
+  color: #666565;
+}
+
+a {
+  color: #262626
+}
+
+a:hover {
+  color: rgb(69, 200, 255);
 }
