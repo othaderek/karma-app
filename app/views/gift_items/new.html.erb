@@ -1,7 +1,7 @@
 <h1> Create A New Gift Item </h1>
 
 <div class="gift-item">
-    <h5 class="validation"><% if flash[:errors] %>
+    <h5 class="errors"><% if flash[:errors] %>
       <ul>
         <% flash[:errors].each do |err| %>
           <li>
@@ -12,7 +12,7 @@
     <% end %></h5>
 
     <%= form_for @gift_item do |f| %>
-      <%= f.label :item %>
+      <h5><%= f.label :item %></h5>
       <%= f.text_field :item %>
       <h5><%= f.submit %></h5>
     <% end %>

@@ -90,6 +90,7 @@ body {
   text-align: center;
 }
 
+
 .section {
   /* display: flex;
   justify-content: space-around;
@@ -97,13 +98,13 @@ body {
   margin: auto;
   width: 40%;
   border: 1px solid black;
-  
+  border-radius: 25px;
   padding: 10px;
   background: #fefff2;
   box-shadow: 5px 5px #666565;
 }
 
-.section, li {
+.section, ul, li {
   color:  #666565;
 }
 
@@ -124,7 +125,7 @@ li {
   list-style-type: none;
 }
 
-.errors, ul {
+.errors, ul, li {
   color: red;
   padding: 0;
 }

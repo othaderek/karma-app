@@ -1,17 +1,18 @@
 <h1>Login</h1>
-  <h5 class="validation"><% if flash[:messages] %>
+  <h5 class="validation">
+  <% if flash[:messages] %>
   <p><%= flash[:messages] %></p>
   <% end %></h5>
   <div class="login">
   <div>
     <%= form_tag "/login" do %>
-      <div><%= label_tag :username %></div>
+      <h5><%= label_tag :username %></h5>
       <div><%= text_field_tag :username %></div>
-      <div><%= label_tag :password %></div>
+      <h5><%= label_tag :password %></h5>
       <div><%= password_field_tag :password %></div>
-      <div><%= submit_tag "Login!" %></div>
+      <h5><div><%= submit_tag "Login!" %></div></h5>
     <% end %>
       <br>
-      <div><%= link_to "Create an account", new_user_path %></div>
+      <h5><%= link_to "Create an account", new_user_path %></h5>
   </div>
 </div>
