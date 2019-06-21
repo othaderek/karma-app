@@ -1,4 +1,16 @@
 <h1>Update User Info </h1>
+
+<h5 class="errors">
+  <% if flash[:errors] %>
+    <ul>
+      <% flash[:errors].each do |err| %>
+        <li>
+          <%= err %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %></h5>
+
 <div class="user-update">
   <div>
 <% if @current_user == @user %>

@@ -57,8 +57,13 @@ class UsersController < ApplicationController
 
   def update
     find_user
-    @user.update(user_params)
-    redirect_to @user
+    if @user.valid?
+      @user.update(user_params)
+      redirect_to @user
+    else 
+      flash[:errors] = @user.errors.full_messages
+      redirect_to edit_user_path
+    end
   end
 
   def destroy
@@ -74,7 +79,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :password, :location, :bio, :pic)
+    params.require(:user).permit(:username, :password, :password_confirmation, :location, :bio, :pic)
   end
 
   def gift_params
