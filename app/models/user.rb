@@ -18,14 +18,13 @@ class User < ApplicationRecord
 
   has_many :received_gift_items, through: :received_gifts, source: :gift_item
   has_many :given_gift_items, through: :given_gifts, source: :gift_item
-  
+
   def give_gift_to(receiver_id, gift_item_id)
     Gift.create(giver_id: self.id, receiver_id: receiver_id, gift_item_id: gift_item_id)
   end
 
   def top_five_gifts
     gifts = self.received_gifts.sort_by {|gift| gift.created_at}.reverse.first(5)
-
   end
 
 
