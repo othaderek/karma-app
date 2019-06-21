@@ -21,7 +21,7 @@
     <% else %>
       <h5><%= button_to "Follow #{@user.username}", follow_user_path, method: "POST"  %></h5>
     <% end %>
-  
+
 
   </div>
   <div>
@@ -68,7 +68,7 @@
         <% end %>
         <%= link_to "Don't See an Item here? Add A Gift Item!", new_gift_item_path %>
       <% end %>
-      
+
       <br>
 <br>
     <% @user.top_five_gifts.each do |gift| %>
@@ -89,4 +89,3 @@
 <%= link_to "Search Users", users_path %>
 </div>
 <!-- carla.received_gifts.map {|gift| "#{gift.giver.username}, #{gift.deed.item}"} -->
-
