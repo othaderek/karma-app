@@ -30,23 +30,25 @@ img {
   border: 1px solid black;
   margin: 5%;
   border-radius: 25px;
-  background-color: #fefff2;
+  background-color: white;
   box-shadow: 5px 5px #666565;
+  
 }
 
 .home-page {
-  background-color: #dddddd;
   border: 2px solid #dddddd;
   border-radius: 25px;
   margin: 5%;
   box-shadow: 5px 5px #666565;
   font-family: 'Montserrat', sans-serif;
+  background-image: url(./gift-image.jpg);
+  background-size: cover;
 }
 
 header, footer {
   display: flex;
   justify-content: space-around;
-  background-color: #fefff2;
+  background-color: white;
   margin: 5%;
   padding: 1%;
   border: 1px solid black;
@@ -100,7 +102,7 @@ body {
   border: 1px solid black;
   border-radius: 25px;
   padding: 10px;
-  background: #fefff2;
+  background: white;
   box-shadow: 5px 5px #666565;
 }
 
