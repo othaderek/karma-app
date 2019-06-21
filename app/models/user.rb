@@ -2,7 +2,6 @@ class User < ApplicationRecord
 
   has_secure_password
   validates :username, presence: true, uniqueness: true
-  validates :password, presence: true
 
   has_many :followed_users, foreign_key: :follower_id, class_name: "Follow", dependent: :destroy
   has_many :followees, through: :followed_users #Return user instances
@@ -25,7 +24,6 @@ class User < ApplicationRecord
 
   def top_five_gifts
     gifts = self.received_gifts.sort_by {|gift| gift.created_at}.reverse.first(5)
-
   end
 
 
