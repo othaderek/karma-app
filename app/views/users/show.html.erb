@@ -64,16 +64,15 @@
           <%= f.hidden_field :receiver_id, value: @user.id %>
           <%= f.hidden_field :giver_id, value: @current_user.id %>
           <%= f.collection_select :gift_item_id, @gift_items, :id, :item %>
-          <%= f.submit %>
+          <h5><%= f.submit :class => 'button' %></h5>
         <% end %>
         <%= link_to "Don't See an Item here? Add A Gift Item!", new_gift_item_path %>
       <% end %>
-      
-      <br>
+<br>
 <br>
     <% @user.top_five_gifts.each do |gift| %>
       <ul>
-        <li>
+        <li id="gift-list">
           <%= gift.giver.username %> gifted <%= gift.gift_item.item %>
         </li>
       </ul>
